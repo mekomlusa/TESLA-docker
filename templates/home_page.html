@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>Home Page Template</title>
+
+{% block base_head %}
+     <link rel='stylesheet' href='{% static "css/main.css" %}'>
+{% endblock %}
+
+{% block content %}
+
+<div class='text-center'>
+    <h1>{{ title }}</h1>
+    <h1>TESLA(TwittEr Spam LeArning)</h1>
+</div>
+
+<div class='row'>
+    <div class='col-12 col-md-6 mx-auto py-5'>
+        <p>Let's checkout if this user is a spam!</p>
+        {% include 'predictions/search-form.html' %}
+    </div>
+</div>
+{% endblock%}

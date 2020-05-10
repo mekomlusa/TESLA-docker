@@ -1,0 +1,1 @@
+web: gunicorn Tesla.wsgi --timeout 30 --log-file -

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:4430
+    container_name: Tesla-prod
+    volumes:
+      - ./code:/src
+    ports:
+      - "4430:4430"
+    restart: on-failure
