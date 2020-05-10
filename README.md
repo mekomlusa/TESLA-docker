@@ -1,4 +1,4 @@
-TESLA: TwittEr Spam LeArning - Docker Version
+# TESLA: TwittEr Spam LeArning - Docker Version
 
 ## CSCE 670 Spring 2018, Course Project
 
@@ -9,7 +9,7 @@ This is the dockerized version of [TESLA: TwittEr Spam LeArning](https://github.
 To deploy this app locally, please ensure that you have `Docker >= 19.03.8` installed already.
 
 1. Clone the whole repo to your local drive.
-2. While at this folder, run: `docker-compose up -d`
+2. While at the project folder, run: `docker-compose up -d`
 
 Wait a bit, and if everything works you should be able to view the app at `localhost:4430`.
 
@@ -17,7 +17,7 @@ Wait a bit, and if everything works you should be able to view the app at `local
 
 This part is designed for those who would like to publish the app to the web and prefer not to visit it through `IP:PORT`. Please make sure that your app is already up and running stably at `localhost:4430` before reading on.
 
-Method 1: Use Nginx
+**Method 1: Use Nginx**
 
 This is what I'm using right now (since my VPS already has Nginx configured to serve other websites). Follow [this guide](https://www.digitalocean.com/community/questions/how-to-host-multiple-docker-containers-on-a-single-droplet-with-nginx-reverse-proxy?answer=57632) starting from step 2. It should allow basic HTTP traffic. To add SSL, a valid certificate is needed (I used `certbot` and `letsencrpyt` [guide](https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates-on-ubuntu-16-04)). Modify your Nginx configuration file to add a block similar to below:
 
@@ -39,8 +39,8 @@ server {
 
 Restart the Nginx server and your app should display for incoming HTTPS traffic as well.
 
-Method 2: Use Traefik to manage docker networks
+**Method 2: Use Traefik to manage docker network traffic**
 
 Refer to the instruction [here](https://www.digitalocean.com/community/tutorials/how-to-use-traefik-as-a-reverse-proxy-for-docker-containers-on-ubuntu-16-04)
 
-It's also possible to use Nginx proxy as an alternative network. The setup is similar to Traefik.
+--> It's also possible to use Nginx-proxy as an alternative network policy. The setup is similar to Traefik.
